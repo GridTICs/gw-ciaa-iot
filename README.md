@@ -33,22 +33,24 @@ Se deben realizar las siguientes operaciones
 
 	cd CIAAFirmware/
 
-* indicar compilar el programa del proyecto
+Indicar compilar el programa del proyecto
 
-	cat >Makefile.mine << EOF
-	BOARD          ?= ciaa_nxp
-	PROJECT_PATH ?= examples$(DS)blinking_lwip
+```
+cat >Makefile.mine << EOF
+BOARD          ?= ciaa_nxp
+PROJECT_PATH ?= examples$(DS)blinking_lwip
+```
 
-* parchar acceso a stack de OS
+Parchar acceso a stack de OS
 
 	bash parchar_memstatica.sh
 
-* compilar
+Pcompilar
 
 	make -s all
 
-* conectar la CIAA a la computadora o VM
-* transferir
+Conectar la CIAA a la computadora o VM
+Transferir
 
 	make download
 
