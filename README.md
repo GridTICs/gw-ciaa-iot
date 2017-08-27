@@ -158,6 +158,12 @@ Tal vez hacer port de la propuesta del  RFC 8106.
 
 CSV con ASCII que no indica la magnitud de la medición no sería muy profesional.
 
+#### Verbosidad de IP de Mote Border Router
+
+Actualmente solo se ve la dirección IP si el usuario compila la CIAA con flags
+para depuración. O bien el usuario debería calcular la dirección del mote con
+la MAC de este y la dirección de red o sniffeando la PAN.
+
 #### FIXME: Muchos otros
 
 ### En CIAA
