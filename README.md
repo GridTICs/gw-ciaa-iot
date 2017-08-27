@@ -130,7 +130,9 @@ del host indicado en project-conf.h del udp-client.
 
 La primera fila es número de secuencia de 16 bits sin signo, para el ñumero de secuencia 0 se indica qué parámetro ambiental es cada valor.
 
-TODO: servidor de carlos, instructivo de depsliegue.
+Hay un script `tools/udpserver.py` que puede correr como servidor de pruebas.
+
+*TODO*: servidor de carlos, instructivo de depsliegue.
 
 ## Apéndice 1: Escenario sin IPv6 de alcance global
 
