@@ -132,7 +132,8 @@ Se puede ajustar el Número de IP(v6) del servidor al cual enviar datos entre ot
 Los motes envían la información en texto plano como CSV por UDP al puerto 3000
 del host indicado en project-conf.h del udp-client.
 
-La primera fila es número de secuencia de 16 bits sin signo, para el ñumero de secuencia 0 se indica qué parámetro ambiental es cada valor.
+La primera fila es número de secuencia de 16 bits sin signo, para el número de
+secuencia 0 se indica qué parámetro ambiental es cada valor.
 
 Hay un script `tools/udpserver.py` que puede correr como servidor de pruebas.
 
