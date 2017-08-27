@@ -69,7 +69,10 @@ implica que todas las placas tendrán la misma dirección MAC. La MAC está
 cargada en
 `CIAAFirmware/externals/lwip/cortexM4/lpc43xx/lpc4337/src/arch/lpc18xx_43xx_emac.c:919`.
 
-La Red IPv6 de la WSN es `fd00::0/64`, eso se ajusta en `CIAAFirmware/modules/drivers/cortexM4/lpc43xx/lpc4337/src/ciaaDriverEth.c:204`. Si se quisiera indicar otra red alcanzaría con editar ese archivo.
+La Red IPv6 de la WSN es `fd00::0/64`, eso se ajusta en
+`CIAAFirmware/modules/drivers/cortexM4/lpc43xx/lpc4337/src/ciaaDriverEth.c:204`
+y `CIAAFirmware/externals/lwip/src/contikibr.c:11`. Si se quisiera indicar
+otra red alcanzaría con editar *ambos archivos*.
 
 ### Preparar contiki para openmote-cc2538
 
