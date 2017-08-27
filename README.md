@@ -38,7 +38,8 @@ Indicar compilar el programa del proyecto
 ```
 cat >Makefile.mine << EOF
 BOARD          ?= ciaa_nxp
-PROJECT_PATH ?= examples$(DS)blinking_lwip
+PROJECT_PATH ?= examples\$(DS)blinking_lwip
+EOF
 ```
 
 Parchar acceso a stack de OS
