@@ -32,24 +32,98 @@ Se deben realizar las siguientes operaciones
 ### Preparar Firmware para CIAA
 
 	cd CIAAFirmware/
-	# indicar compilar el programa del proyecto
+
+* indicar compilar el programa del proyecto
+
 	cat >Makefile.mine << EOF
 	BOARD          ?= ciaa_nxp
 	PROJECT_PATH ?= examples$(DS)blinking_lwip
-	# parchar acceso a stack de OS
+
+* parchar acceso a stack de OS
+
 	bash parchar_memstatica.sh
-	# compilar
+
+* compilar
+
 	make -s all
-	# conectar la CIAA a la computadora o VM y transferir
+
+* conectar la CIAA a la computadora o VM
+* transferir
+
 	make download
 
-Los mensajes de depuración estarán accesibles en el segundo puerto serie del FTDI. Se puede leerlos usando gtkterm
+Los mensajes de depuración estarán accesibles en el segundo puerto serie del
+FTDI. Se puede leerlos usando gtkterm
 
 	gtkterm --port /dev/ttuUSB1 -s 115200
 
+### Ajustes en el código (configuraciones)
+
+Una buena parte de los ajustes se hicieron en `lwipopts.h`, archivo ubicado
+en `CIAAFirmware/examples/blinking_lwip/inc/lwipopts.h`.
+
+La Red IPv6 de la WSN es fd00::0/64, eso se ajusta en CIAAFirmware/modules/drivers/cortexM4/lpc43xx/lpc4337/src/ciaaDriverEth.c:204`. Si se quisiera indicar otra red alcanzaría con editar ese archivo.
+
 ### Preparar contiki para openmote-cc2538
 
-FIXME
+#### Del lado del border router
+
+Se programa solo un mote
+
+* ir al directorio de contiki
+
+	cd ../contiki/gw-iot/
+
+* compilar mote router border
+
+	cd rpl-border-router/
+	make -s
+
+* conectar el mote a un OpenUSB y puentear los pines `ON/SLEEP` y `GND`
+* conectar el OpenUSB a la computadora o VM
+* transferir el firmware
+
+	make border-router.upload
+
+* desconectar el puente de programación
+* instalar el mote en la placa adaptadora a RS232
+
+#### Mote entregando datos
+
+Se programa tantos motes como se desee, el origen de los datos son los sensores
+de OpenUSB.
+
+* ir al directorio de contiki
+
+	cd ../../../contiki/gw-iot/
+
+* compilar mote router border
+
+	cd udp-ipv6-client/
+	make -s
+
+* conectar el mote a un OpenUSB y puentear los pines `ON/SLEEP` y `GND`
+* conectar el OpenUSB a una computadora o VM
+* transferir el firmware
+
+	make udp-client.upload
+
+Se puede transferir el mismo binario a todos los motes
+
+#### Ajustes en el código
+
+Las intervenciones al código para openmote han sido comentadas con el string
+`GW-IoT`, para cada una se explica y justifica el uso.
+Se puede ajustar el Número de IP(v6) del servidor al cual enviar datos entre otras cosas.
+
+## Servidor de recolección de datos
+
+Los motes envían la información en texto plano como CSV por UDP al puerto 3000
+del host indicado en project-conf.h del udp-client.
+
+La primera fila es número de secuencia de 16 bits sin signo, para el ñumero de secuencia 0 se indica qué parámetro ambiental es cada valor.
+
+TODO: servidor de carlos, instructivo de depsliegue.
 
 ## Apéndice 1: Escenario sin IPv6 de alcance global
 
