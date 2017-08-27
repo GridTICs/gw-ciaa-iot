@@ -45,7 +45,7 @@ Parchar acceso a stack de OS
 
 	bash parchar_memstatica.sh
 
-Pcompilar
+Compilar
 
 	make -s all
 
@@ -64,7 +64,7 @@ FTDI. Se puede leerlos usando gtkterm
 Una buena parte de los ajustes se hicieron en `lwipopts.h`, archivo ubicado
 en `CIAAFirmware/examples/blinking_lwip/inc/lwipopts.h`.
 
-La Red IPv6 de la WSN es fd00::0/64, eso se ajusta en CIAAFirmware/modules/drivers/cortexM4/lpc43xx/lpc4337/src/ciaaDriverEth.c:204`. Si se quisiera indicar otra red alcanzaría con editar ese archivo.
+La Red IPv6 de la WSN es `fd00::0/64`, eso se ajusta en `CIAAFirmware/modules/drivers/cortexM4/lpc43xx/lpc4337/src/ciaaDriverEth.c:204`. Si se quisiera indicar otra red alcanzaría con editar ese archivo.
 
 ### Preparar contiki para openmote-cc2538
 
@@ -72,41 +72,41 @@ La Red IPv6 de la WSN es fd00::0/64, eso se ajusta en CIAAFirmware/modules/drive
 
 Se programa solo un mote
 
-* ir al directorio de contiki
+Ir al directorio de contiki
 
 	cd ../contiki/gw-iot/
 
-* compilar mote router border
+Compilar mote router border
 
 	cd rpl-border-router/
 	make -s
 
-* conectar el mote a un OpenUSB y puentear los pines `ON/SLEEP` y `GND`
-* conectar el OpenUSB a la computadora o VM
-* transferir el firmware
+Conectar el mote a un OpenUSB y puentear los pines `ON/SLEEP` y `GND`.
+Conectar el OpenUSB a la computadora o VM
+Transferir el firmware
 
 	make border-router.upload
 
-* desconectar el puente de programación
-* instalar el mote en la placa adaptadora a RS232
+Desconectar el puente de programación
+Instalar el mote en la placa adaptadora a RS232
 
 #### Mote entregando datos
 
 Se programa tantos motes como se desee, el origen de los datos son los sensores
 de OpenUSB.
 
-* ir al directorio de contiki
+Ir al directorio de contiki
 
 	cd ../../../contiki/gw-iot/
 
-* compilar mote router border
+Compilar mote router border
 
 	cd udp-ipv6-client/
 	make -s
 
-* conectar el mote a un OpenUSB y puentear los pines `ON/SLEEP` y `GND`
-* conectar el OpenUSB a una computadora o VM
-* transferir el firmware
+Conectar el mote a un OpenUSB y puentear los pines `ON/SLEEP` y `GND`
+Conectar el OpenUSB a una computadora o VM
+Transferir el firmware
 
 	make udp-client.upload
 
