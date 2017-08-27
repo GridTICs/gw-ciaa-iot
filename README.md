@@ -64,6 +64,11 @@ FTDI. Se puede leerlos usando gtkterm
 Una buena parte de los ajustes se hicieron en `lwipopts.h`, archivo ubicado
 en `CIAAFirmware/examples/blinking_lwip/inc/lwipopts.h`.
 
+La MAC addresss de la interface etherent de la CIAA está hardcodeada. Esto
+implica que todas las placas tendrán la misma dirección MAC. La MAC está
+cargada en
+`CIAAFirmware/externals/lwip/cortexM4/lpc43xx/lpc4337/src/arch/lpc18xx_43xx_emac.c:919`.
+
 La Red IPv6 de la WSN es `fd00::0/64`, eso se ajusta en `CIAAFirmware/modules/drivers/cortexM4/lpc43xx/lpc4337/src/ciaaDriverEth.c:204`. Si se quisiera indicar otra red alcanzaría con editar ese archivo.
 
 ### Preparar contiki para openmote-cc2538
