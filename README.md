@@ -149,11 +149,29 @@ Ver el README.md indicado en el directorio.
 
 ### En Motes
 
-* acceso al servidor por nombre de host
-* FIXME: Muchos otros
+#### Acceso al servidor sin recompilar
 
-## En CIAA
+Podría ser por nombre de dominio o alguna negociación mote-ciaa ciaa-server.
+Tal vez hacer port de la propuesta del  RFC 8106.
 
-* MAC address desde [Nro de serie](https://www.lpcware.com/content/forum/read-serial-number).
-* Higiene de código para compartir código
-* FIXME: Muchos otros
+#### Reescritura mecanismo de envío de datos
+
+CSV con ASCII que no indica la magnitud de la medición no sería muy profesional.
+
+#### FIXME: Muchos otros
+
+### En CIAA
+
+#### MAC Address
+
+MAC address desde [Nro de serie](https://www.lpcware.com/content/forum/read-serial-number).
+
+#### Higiene de código
+
+Para compartirlo con proyecto CIAA.
+
+#### Modularidad para reutilización
+
+Separación de código de programa y de biblioteca.
+
+#### FIXME: Muchos otros
