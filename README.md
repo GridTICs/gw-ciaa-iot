@@ -171,7 +171,7 @@ la MAC de este y la dirección de red o sniffeando la PAN.
 
 #### MAC Address
 
-MAC address desde [Nro de serie](https://www.lpcware.com/content/forum/read-serial-number).
+MAC address desde [Nro de serie](https://github.com/ciaa/Firmware/blob/master/externals/drivers/cortexM4/lpc43xx/src/iap_18xx_43xx.c#L156).
 
 #### Higiene de código
 
