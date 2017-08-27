@@ -1,0 +1,13 @@
+--- sysctl.conf.bkp	2017-08-20 00:11:46.921820621 -0300
++++ sysctl.conf	2017-08-20 00:13:10.822553592 -0300
+@@ -30,7 +30,9 @@
+ # Uncomment the next line to enable packet forwarding for IPv6
+ #  Enabling this option disables Stateless Address Autoconfiguration
+ #  based on Router Advertisements for this host
+-#net.ipv6.conf.all.forwarding=1
++
++# Para combinar con radvd
++net.ipv6.conf.all.forwarding=1
+ 
+ 
+ ###################################################################

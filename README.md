@@ -129,7 +129,11 @@ TODO: servidor de carlos, instructivo de depsliegue.
 
 ## Apéndice 1: Escenario sin IPv6 de alcance global
 
-FIXME radvd
+Los archivos contendos en `tools/RAdServer` sin útiles  para poder hacer
+funcionar al sistema en una red IPv4 only o si el usuario no tiene manera de
+anunciar rutas para la red LoPAN en la LAN ethenet.
+
+Ver el README.md indicado en el directorio.
 
 ## TODOs / Posibilidades de Mejora
 
