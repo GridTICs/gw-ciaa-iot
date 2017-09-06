@@ -1,0 +1,8 @@
+[submodule "CIAAFirmware"]
+	path = CIAAFirmware
+	url = https://git.wsn.gridtics.frm.utn.edu.ar/ciaa-lowpan/Firmware-ciaa-lowpan.git
+	branch = 1774-codigo-para-mincyt
+[submodule "contiki"]
+	path = contiki
+	url = https://git.wsn.gridtics.frm.utn.edu.ar/ciaa-lowpan/contiki-ciaa-lowpan.git
+	branch = 1774-contiki-ministerio

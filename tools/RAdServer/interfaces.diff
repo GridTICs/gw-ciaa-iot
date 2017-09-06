@@ -1,0 +1,24 @@
+--- interfaces.bkp	2017-08-20 00:10:07.913256144 -0300
++++ interfaces	2017-08-20 00:10:33.418276763 -0300
+@@ -10,3 +10,21 @@
+ # The primary network interface
+ auto enp0s3
+ iface enp0s3 inet dhcp
++
++# http://simpledns.com/private-ipv6.aspx
++# Prefix/L:	  fd
++# Global ID:	  b7da998748
++# Subnet ID:	  9289
++# Combined/CID:	  fdb7:da99:8748:9289::/64
++# IPv6 addresses:	  fdb7:da99:8748:9289:xxxx:xxxx:xxxx:xxxx
++iface enp0s3 inet6 static
++	address fdb7:da99:8748:9289::1
++	netmask 64
++	# Las siguientes son rutas para la computadora del matías
++	# post-up ip -6 route add fd00::0/64 via fe80::7a24:afff:fe43:32cb dev enp0s3
++	# pre-down ip -6 route del fd00::0/64 via fe80::7a24:afff:fe43:32cb dev enp0s3
++	# Las siguientes son rutas para la CIAA
++	post-up ip -6 route add fd00::0/64 via fe80::260:37ff:fe12:3456 dev enp0s3
++	pre-down ip -6 route del fd00::0/64 via fe80::260:37ff:fe12:3456 dev enp0s3
++
++
