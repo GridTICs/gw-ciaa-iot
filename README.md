@@ -58,7 +58,7 @@ Transferir
 Los mensajes de depuración estarán accesibles en el segundo puerto serie del
 FTDI. Se puede leerlos usando gtkterm
 
-	gtkterm --port /dev/ttuUSB1 -s 115200
+	gtkterm --port /dev/ttyUSB1 -s 115200
 
 ### Ajustes en el código (configuraciones)
 
