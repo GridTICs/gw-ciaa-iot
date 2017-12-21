@@ -26,7 +26,7 @@ Se deben realizar las siguientes operaciones
 
 ### Clonar este repositorio con sus submódulos
 
-	git clone --recursive https://git.wsn.gridtics.frm.utn.edu.ar/ciaa-lowpan/gw-ciaa-iot.git
+	git clone --recursive https://github.com/GridTICs/gw-ciaa-iot.git
 	cd gw-ciaa-iot/
 
 ### Preparar Firmware para CIAA
